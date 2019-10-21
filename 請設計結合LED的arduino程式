@@ -1,86 +1,83 @@
-const int numLeds = 5;  //宣告陣列元素變數並設初值
+const int numLeds = 5;                            //宣告陣列元素變數並設初值
 
-int ledPins[5] = {8,9,10,11,12};  //宣告陣列，並給初值，此例為腳位8,9,10,11,12
+int ledPins[5] = {2,3,4,5,6};                  //宣告陣列，並給初值，此例為腳位2,3,4,5,6
 
 
 void setup()
 {
-    for (int i = 0; i < numLeds; i++) {     /*for迴圈，宣告變數i，並設初值0，每次加1，當大於numLeds的直時離開迴圈*/
+    for (int i = 0; i < numLeds; i++) {     
 
     pinMode(ledPins[i], OUTPUT);
 
    }
 }
 
-void loop()
-{
+void loop()                                      //腳位2,4,6亮燈，3,5不亮
+{                                        
 
-    // 循序打開每一個LED燈
-    //腳位8,10,12亮燈，9,11,不亮燈
-
-    for (int i = 0; i < numLeds; i++) {
+    for (int i = 0; i < numLeds; i++) {   
 
         digitalWrite(ledPins[i], HIGH);
 
-        delay(250); }
+        delay(0); }
         
     for (int i = 1; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(250); }
+        delay(0); }
         
     for (int i = 2; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], HIGH);
 
-        delay(250); }
+        delay(0); }
         
     for (int i = 3; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(250); }
+        delay(0); }
         
     for (int i = 4; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], HIGH);
 
-        delay(250); 
+        delay(750); 
  }    
 
-    // 循序關閉每一個LED燈
-    //腳位8,10,12不亮燈，9,11亮燈
+                                                 //腳位2,4,6不亮燈，3,5亮燈
+
 
     for (int i = 0; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(250); }
+        delay(0); }
         
      for (int i = 1; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], HIGH);
 
-        delay(250); }
+        delay(0); }
         
      for (int i = 2; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(250); }
+        delay(0); }
         
      for (int i = 3; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], HIGH);
 
-        delay(250); }
+        delay(0); }
         
      for (int i = 4; i < numLeds; i++) {
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(250);
+        delay(1000);
 
     }    
 }
