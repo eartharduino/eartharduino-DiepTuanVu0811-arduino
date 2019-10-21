@@ -77,7 +77,7 @@ void loop()                                      //腳位2,4,6亮燈，3,5不亮
 
         digitalWrite(ledPins[i], LOW);
 
-        delay(1000);
+        delay(750);
 
     }    
 }
