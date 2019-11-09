@@ -1,0 +1,64 @@
+int DO=1;
+int re=2;
+int me=3;
+int fa=4;
+int so=5;
+int la=6;
+int si=7;
+int bee=8;
+void setup() {
+pinMode(1,INPUT);
+pinMode(2,INPUT);
+pinMode(3,INPUT);
+pinMode(4,INPUT);
+pinMode(5,INPUT);
+pinMode(6,INPUT);
+pinMode(7,INPUT);
+pinMode(8,INPUT);
+}
+
+void loop() {
+int a = digitalRead(DO);
+int b = digitalRead(re);
+int c = digitalRead(me);
+int d = digitalRead(fa);
+int e = digitalRead(so);
+int f = digitalRead(la);
+int g = digitalRead(si);
+int h = digitalRead(bee);
+if(a==1)
+{tone(10,523);
+delay(100);
+noTone(10);
+}
+else if(b==1)
+{tone(10,587);
+delay(100);
+noTone(10);
+}
+else if(c==1)
+{tone(10,659);
+delay(100);
+noTone(10);
+}
+else if(d==1)
+{tone(10,698);
+delay(100);
+noTone(10);
+}
+else if(e==1)
+{tone(10,784);
+delay(100);
+noTone(10);
+}
+else if(f==1)
+{tone(10,880);
+delay(100);
+noTone(10);
+}
+else if(g==1)
+{tone(10,988);
+delay(100);
+noTone(10);
+}
+}
