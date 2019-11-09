@@ -1,0 +1,20 @@
+#include "LedControl.h"
+LedControl cc=LedControl(12,11,10,1);
+void setup() {
+    cc.shutdown(0,false);
+    cc.setIntensity(0,8);
+    cc.clearDisplay(0);
+  }
+void loop() { 
+  cc.setRow(0,0,B00111100);
+  cc.setRow(0,1,B01000010);
+  cc.setRow(0,2,B10100101);
+  cc.setRow(0,3,B10000001);
+  cc.setRow(0,4,B10100101);
+  cc.setRow(0,5,B10011001);
+  cc.setRow(0,6,B01000010);
+  cc.setRow(0,7,B00111100);
+  delay(500);
+  cc.clearDisplay(0);
+ }
+  
