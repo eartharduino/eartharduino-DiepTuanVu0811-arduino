@@ -1,2 +1,44 @@
-請運用DHT22+LCD或四數位七段顯示器(兩者選一)，設計程式，讓溫度(攝氏)及相對溼度資料在顯示器上呈現。
-完成期限：108年10月30日
+#include "DHT.h"        
+#define DHTPIN 2        
+#define DHTTYPE DHT22   
+DHT dht(DHTPIN, DHTTYPE);
+
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+int x=123;                      
+
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
+//LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);  
+
+void setup()
+{
+  Serial.begin(9600);
+  lcd.begin(16, 2);     
+  lcd.backlight();     
+  dht.begin();
+}
+
+void loop()
+{
+  delay(200);
+  float dhtT = dht.readTemperature();  
+  float dhtH = dht.readHumidity();
+  lcd.home();   
+  lcd.clear(); 
+ 
+  lcd.setCursor(0, 1);      
+  lcd.print("dhtH:");
+  lcd.setCursor(5,1);      
+  lcd.print(dhtH);
+  
+  lcd.setCursor(0, 0);      
+  lcd.print("dhtT:");
+  lcd.setCursor(5, 0);        
+  lcd.print(dhtT);
+  
+  lcd.setCursor(11, 0);  
+  lcd.print("C");   
+  
+  lcd.setCursor(11, 1);       
+  lcd.print("RH");
+}
